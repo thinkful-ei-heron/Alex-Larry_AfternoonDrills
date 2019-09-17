@@ -9,3 +9,15 @@ function hello() {
 function goodbye() {
   console.log('Goodbye World');
 }
+
+function filter(myNames, fn) {
+  let newNames = [];
+  let i = 0;
+  myNames.forEach(function(data) {
+    if(fn(data.charAt(0)) === true) {
+      newNames[i] = data;
+      i++;
+    }
+  })
+  return newNames;
+}
