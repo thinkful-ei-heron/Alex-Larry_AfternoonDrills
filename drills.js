@@ -20,7 +20,7 @@ function filter(myNames, fn) {
     }
   })
   return newNames;
-}*/
+}
 
 function hazardWarningCreator (typeOfWarning) {
   let warningCounter = 0;
@@ -45,6 +45,30 @@ tsunamiWarning('A few feet in front of you');
 
 snowWarning('Cold Lane and Snow Place');
 snowWarning('Forest Blvd and Mountainview');
-snowWarning('All over the place');
+snowWarning('All over the place');*/
 
 
+function noNegatives(steps) {
+  return steps.concat.apply([], steps).filter(el => el >= 0);
+}
+
+function totalSteps(mySteps) {
+  let newArray;
+  let total = 0;
+  allSteps = mySteps.concat.apply([], steps);
+  newArray = allSteps.map(x => Math.abs(x));
+  newArray.forEach(function(step){
+    total += step;
+  });
+  return total;
+}
+
+function totalMovement(mySteps) {
+  let numberOfSteps = 0;
+  let i = 1;
+  mySteps.forEach(function(step){
+    numberOfSteps = Math.abs(step[0]) + Math.abs(step[1]);
+    console.log(`Movement #${i}: ${numberOfSteps} steps`);
+    i++;
+  });
+}
