@@ -45,7 +45,7 @@ tsunamiWarning('A few feet in front of you');
 
 snowWarning('Cold Lane and Snow Place');
 snowWarning('Forest Blvd and Mountainview');
-snowWarning('All over the place');*/
+snowWarning('All over the place');
 
 
 function noNegatives(steps) {
@@ -72,3 +72,36 @@ function totalMovement(mySteps) {
     i++;
   });
 }
+*/
+
+
+/*function secretMessage(code) {
+  let codeArray = code.split(" ");
+  let newArray = '';
+  codeArray.forEach(function(word){
+    if(word.length === 3){
+      newArray += ' ';
+    }
+    else{
+      newArray += word.charAt(word.length-1).toUpperCase();
+    }
+  });
+  console.log(newArray);
+}*/
+
+function secretMessage(code) {
+  let codeArray = code.split(' ');
+  //let finalCode = '';
+  //let word = '';
+  let finalCode = codeArray.reduce(function(acc, e){
+    if(e.length === 3){
+      return acc += ' ';
+    }
+    else{
+      return acc += e.charAt(e.length-1).toUpperCase();
+    }
+  }, (str =''));
+  console.log(finalCode);
+}
+let code = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+secretMessage(code);
